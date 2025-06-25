@@ -171,12 +171,11 @@ header #back{
   min-height: calc(100vh - var(--nav-height));
   background: var(--bg-dark);
   padding: calc(var(--nav-height) * 2) 30px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 50px;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
   visibility: hidden;
   opacity: 0;
   transition: all .3s;
@@ -187,11 +186,17 @@ header #back{
   opacity: 1;
 }
 
+.color-page h1{
+  font-size: var(--1-25);
+  line-height: calc(1em + 0.5rem);
+}
+
 .color-page h2{
   font-size: var(--1);
   line-height: 1.5rem;
   color: var(--text-muted);
   opacity: 0.9;
+  margin-bottom: 20px;
 }
 
 .color-page .color-cards{
@@ -282,8 +287,9 @@ header #back{
     flex-grow: 0;
     /* padding: 25px; */
   }
-  .color-page h2{
+  .color-page h2, .color-page h1{
     width: 80%;
+    margin-left: 10%;
   }
   .color-page .color-cards{
     /* width: 940px;*/
