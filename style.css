@@ -266,9 +266,9 @@ header #back{
     padding: 0 60px;
   }
   header i{
-    width: 35px;
-    height: 35px;
-    font-size: var(--1-25);
+    width: 30px;
+    height: 30px;
+    font-size: var(--1);
   }
   .home{
     gap: 30px;
