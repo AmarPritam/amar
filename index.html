@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+  <header>
+    <i class="fas fa-arrow-left" id="back"></i>
+    <h2 id="logo">Amar</h2>
+    <i class="fas fa-power-off" id="theme"></i>
+  </header>
+  
+  <main>
+    <section class="home">
+      <div class="card">
+        <h2><a href="https://amarpritam.github.io/WebTheme/">4 Colors UI</a></h2>
+        <p>This is a simple 4 color theme generator.</p>
+      </div>
+      <div class="card">
+        <h2 onclick="openPage('color-page')">Color Generator</h2>
+        <p>This is a color generator tool.</p>
+      </div>
+      <div class="card">
+        <h2><a href="https://amarpritam.github.io/Neumorphism-Generator/">Neumorphism Generator</a></h2>
+        <p>This is the best neumorphism generator.</p>
+      </div>
+    </section>
+    <section class="color-page" id="color-page">
+      <h2>There are various types of color generator made by me for your ease. And I'm also going add more of these generator. So use these tools and make beautiful ui for your websites.</h2>
+      <div class="color-cards">
+        <div class="card color-card">
+          <h3><a href="https://amarpritam.github.io/Shader/">Shades Generator</a></h3>
+          <p>This is a color shades generator</p>
+        </div>
+        <div class="card color-card">
+          <h3><a href="https://amarpritam.github.io/Pallette-Generator/">Color Palette Generator</a></h3>
+          <p>This is a color palete generator</p>
+        </div>
+        <div class="card color-card">
+          <h3><a href="https://amarpritam.github.io/RGB-Generator/">RGB Generator</a></h3>
+          <p>This is a rgba color generator</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+  <script>
+    let themeBtn = document.getElementById('theme');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme')
+    });
+    
+    function openPage(id) {
+      let backBtn = document.getElementById('back');
+      let logo = document.getElementById('logo');
+      let page = document.getElementById(id);
+      page.classList.add('open');
+      backBtn.style.display = 'block';
+      logo.style.display = 'none'
+      
+      backBtn.addEventListener('click', () => {
+        page.classList.remove('open')
+        backBtn.style.display = 'none';
+        logo.style.display = 'block'
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  /* hsl (fallback color) */
+  --bg-dark: hsl(51 94% 1%);
+  --bg: hsl(54 58% 3%);
+  --bg-light: hsl(55 33% 7%);
+  --text: hsl(56 64% 90%);
+  --text-muted: hsl(56 17% 65%);
+  --highlight: hsl(56 16% 35%);
+  --border: hsl(55 23% 24%);
+  --border-muted: hsl(55 38% 14%);
+  --primary: hsl(55 69% 57%);
+  /* before 59% */
+  --secondary: hsl(240 68% 80%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+  --shadow: 0 2px 2px hsla(0 0% 0% 0.07), 0 4px 4px hsla(0 0% 0% 0.15);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  
+  /* FONT SIZE VARIABLE */
+  --big: 3rem;
+  --mid: 1.5rem;
+  --1-25: 1.25rem;
+  --1: 1rem;
+  --small: 0.5rem;
+  --nav-height: 50px;
+}
+
+body.light-theme {
+  /* hsl (fallback color) */
+  --bg-dark: hsl(57 24% 87%);
+  --bg: hsl(57 41% 92%);
+  --bg-light: hsl(57 100% 98%);
+  --text: hsl(50 100% 2%);
+  --text-muted: hsl(55 23% 24%);
+  --highlight: hsl(56 100% 95%);
+  --border: hsl(56 13% 46%);
+  /* --border-muted: hsl(56 14% 58%); */
+  --border-muted: hsl(57 41% 92%);
+  /* --primary: hsl(55 100% 12%); */
+  --primary: hsl(220 63% 56%);
+  /* --button: hsl(220, 47%, 51%); */
+  --danger: hsl(9 21% 41%);
+  --warning: hsl(52 23% 34%);
+  --success: hsl(147 19% 36%);
+  --info: hsl(217 22% 41%);
+  --shadow: 0 2px 2px hsla(0, 0%, 0%, 0.07), 0 4px 4px hsla(0, 0%, 0%, 0.15);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-dark);
+  color: var(--text);
+  transition: all .1s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-height);
+  width: 100%;
+  z-index: 200;
+}
+
+header h2 {
+  color: var(--primary);
+  font-size: var(--mid);
+}
+
+header i {
+  font-size: var(--1);
+  width: 30px;
+  height: 30px;
+  background: var(--bg-light);
+  place-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  border: 1px solid var(--border-muted);
+  border-top-color: var(--highlight);
+  color: var(--primary);
+}
+header #back{
+  display: none;
+}
+
+/* .home STYLING */
+.home {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-muted);
+  border-top-color: var(--highlight);
+  background: var(--gradient);
+  box-shadow: var(--shadow);
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+}
+
+.home .card{
+  min-width: 300px;
+  max-width: calc(500px - 15px);
+}
+
+.card:hover {
+  background: var(--gradient-hover);
+}
+
+.card h2{
+  line-height: 2rem;
+}
+
+.card h2, .card h2 a{
+  font-size: var(1-25);
+  color: var(--text);
+  margin-bottom: 5px;
+  transition: color 0.2s;
+  text-decoration: none;
+  cursor: none;
+}
+
+.card:hover h2, .card:hover h2 a{
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: var(--1);
+}
+
+
+/* COLOR PAGE POPUP DESIGNING */
+.color-page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  background: var(--bg-dark);
+  padding: calc(var(--nav-height) * 2) 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.open{
+  visibility: visible;
+  opacity: 1;
+}
+
+.color-page h2{
+  font-size: var(--1);
+  line-height: 1.5rem;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+
+.color-page .color-cards{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 30px;
+  margin: 0 auto;
+  padding: 30px;
+  overflow: auto;
+  align-items: stretch;
+  /* display: grid; */
+  /* grid-template-columns: 100%; */
+  /* align-content: flex-start; */
+}
+
+.color-cards .color-card{
+  min-width: 200px;
+  /* max-width: calc(600px - 40px); */
+  /* max-width: var(--card-max); */
+  /* max-width: 100%; */
+  flex-grow: 1;
+}
+
+.color-card h3, .color-card h3 a{
+  font-size: var(--1-25);
+  text-decoration: none;
+  color: var(--text);
+  cursor: none;
+}
+.color-card:hover h3 a{
+  color: var(--primary);
+}
+
+/* .color-page .color-cards .color-card{
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-muted);
+  border-top-color: var(--highlight);
+  background: var(--gradient);
+  box-shadow: var(--shadow);
+  text-align: left;
+} */
+
+
+/* .color-page .color-cards .color-card:hover{
+  background: var(--gradient-hover);
+} */
+
+
+@media (min-width: 700px){
+  header i{
+    width: 30px;
+    height: 30px;
+  }
+  .home{
+    justify-content: space-between;
+  }
+  .home .card{
+    width: calc(50% - 15px);
+    flex-grow: 0;
+  }
+}
+
+@media (min-width: 1024px){
+  :root{
+    --nav-height: 60px;
+  }
+  header{
+    padding: 0 60px;
+  }
+  header i{
+    width: 35px;
+    height: 35px;
+    font-size: var(--1-25);
+  }
+  .home{
+    gap: 30px;
+    width: calc(1000px + 120px);
+    padding: 60px;
+    height: calc(100vh - 60px);
+    
+  }
+  .home .card{
+    flex-basis: calc(500px - 15px);
+    flex-grow: 0;
+    /* padding: 25px; */
+  }
+  .color-page h2{
+    width: 80%;
+  }
+  .color-page .color-cards{
+    /* width: 940px;*/
+    width: 80%;
+  }
+  .color-cards .color-card{
+    width: calc((100% / 3) - 20px);
+    flex-grow: 0;
+  }
+}
