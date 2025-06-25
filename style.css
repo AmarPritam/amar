@@ -33,7 +33,7 @@
   --mid: 1.5rem;
   --1-25: 1.25rem;
   --1: 1rem;
-  --small: 0.5rem;
+  --small: 0.75rem;
   --nav-height: 50px;
 }
 
@@ -144,7 +144,7 @@ header #back{
 }
 
 .card h2, .card h2 a{
-  font-size: var(1-25);
+  font-size: var(1);
   color: var(--text);
   margin-bottom: 5px;
   transition: color 0.2s;
@@ -158,7 +158,7 @@ header #back{
 
 .card p {
   color: var(--text-muted);
-  font-size: var(--1);
+  font-size: var(--small);
 }
 
 
@@ -219,7 +219,7 @@ header #back{
 }
 
 .color-card h3, .color-card h3 a{
-  font-size: var(--1-25);
+  font-size: var(--1);
   text-decoration: none;
   color: var(--text);
   cursor: none;
